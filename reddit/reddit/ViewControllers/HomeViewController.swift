@@ -29,6 +29,13 @@ class HomeViewController: UIViewController {
         view.backgroundColor = Colors.gray
         return view
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewTopicVCSegue" {
+            let vc = segue.destination as! NewTopicViewController
+            vc.hidesBottomBarWhenPushed = true
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {

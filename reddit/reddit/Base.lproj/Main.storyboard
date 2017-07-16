@@ -57,7 +57,7 @@
                         <barButtonItem key="rightBarButtonItem" image="ic_new_post" id="Hqg-3x-JxS">
                             <color key="tintColor" red="0.058823529411764705" green="0.81960784313725488" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="nAT-EJ-BqQ" kind="show" id="f3i-Hh-ivM"/>
+                                <segue destination="nAT-EJ-BqQ" kind="show" identifier="NewTopicVCSegue" id="f3i-Hh-ivM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,7 +72,7 @@
         <!--Text Post-->
         <scene sceneID="bLC-r0-auH">
             <objects>
-                <viewController id="nAT-EJ-BqQ" customClass="NewTopicViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nAT-EJ-BqQ" customClass="NewTopicViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7fK-CS-dz3"/>
                         <viewControllerLayoutGuide type="bottom" id="xJS-CY-szI"/>
@@ -80,7 +80,41 @@
                     <view key="view" contentMode="scaleToFill" id="Vva-MY-BlE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" text="An interesting title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Km-s53">
+                                <rect key="frame" x="10" y="68" width="355" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XON-yG-vxh">
+                                <rect key="frame" x="0.0" y="587" width="375" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-ln-Ewi">
+                                        <rect key="frame" x="345.5" y="12" width="19.5" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="I1S-ln-Ewi" secondAttribute="trailing" constant="10" id="NtW-1A-1dE"/>
+                                    <constraint firstAttribute="height" constant="36" id="OR2-aM-K6V"/>
+                                    <constraint firstItem="I1S-ln-Ewi" firstAttribute="centerY" secondItem="XON-yG-vxh" secondAttribute="centerY" id="oJu-hV-5am"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mfj-Km-s53" firstAttribute="leading" secondItem="Vva-MY-BlE" secondAttribute="leading" constant="10" id="1bv-Gg-g0j"/>
+                            <constraint firstItem="xJS-CY-szI" firstAttribute="top" secondItem="XON-yG-vxh" secondAttribute="bottom" id="Jvg-Oe-Kcb"/>
+                            <constraint firstItem="XON-yG-vxh" firstAttribute="leading" secondItem="Vva-MY-BlE" secondAttribute="leading" id="P2l-CU-vv0"/>
+                            <constraint firstAttribute="trailing" secondItem="Mfj-Km-s53" secondAttribute="trailing" constant="10" id="n35-mh-nF1"/>
+                            <constraint firstAttribute="trailing" secondItem="XON-yG-vxh" secondAttribute="trailing" id="rNv-Wj-Evh"/>
+                            <constraint firstItem="Mfj-Km-s53" firstAttribute="top" secondItem="7fK-CS-dz3" secondAttribute="bottom" constant="4" id="uNH-VI-2hK"/>
+                            <constraint firstItem="XON-yG-vxh" firstAttribute="top" secondItem="Mfj-Km-s53" secondAttribute="bottom" id="zTR-Vo-X9s"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Text Post" id="bQ6-80-DhF">
@@ -98,10 +132,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="Jvg-Oe-Kcb" id="LlP-yM-bbi"/>
+                        <outlet property="contentTextView" destination="Mfj-Km-s53" id="f33-AJ-lvP"/>
+                        <outlet property="countCharacterLabel" destination="I1S-ln-Ewi" id="1bX-06-sDc"/>
+                        <outlet property="postButton" destination="BQO-nO-apl" id="Cjz-f9-5DE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkb-4z-faF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="-548"/>
+            <point key="canvasLocation" x="1413.5999999999999" y="-548.27586206896558"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Rh-5t-1mB">
