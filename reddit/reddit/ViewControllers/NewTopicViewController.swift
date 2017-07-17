@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol NewTopicViewControllerDelegate {
+    func newPost(topic: Topic)
+}
+
 class NewTopicViewController: UIViewController {
 
     @IBOutlet weak var postButton: UIBarButtonItem!
     @IBOutlet weak var countCharacterLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    var delegate: NewTopicViewControllerDelegate?
+    
     let placeHolder = "An interesting title"
     let limitCharacter: Int = 255
     var countCharacter: Int = 255 {
@@ -33,6 +39,9 @@ class NewTopicViewController: UIViewController {
     }
     
     @IBAction func postAction(_ sender: Any) {
+        print(User.currentUser)
+        let topic = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: contentTextView.text, upVote: 0, downVote: 0)
+        delegate?.newPost(topic: topic)
         _ = navigationController?.popViewController(animated: true)
     }
     
@@ -52,15 +61,17 @@ class NewTopicViewController: UIViewController {
     func setPlaceHolder() {
         isContentChanged = false
         countCharacterLabel.isHidden = true
+        postButton.isEnabled = false
         contentTextView.text = placeHolder
         contentTextView.selectedRange = NSRange(location: 0,length: 0)
         contentTextView.textColor = Colors.grayPlaceHolder
     }
     
     func showWarningPopup() {
-        let message = "Do you want to discard your post?"
-        let alertPopup = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alertPopup.addAction(UIAlertAction(title: "Keep edditing", style: .default) {
+        let title = "Do you want to discard your post?"
+        let alertPopup = UIAlertController(title: title, message: "", preferredStyle: .alert)
+
+        alertPopup.addAction(UIAlertAction(title: "Keep edditing", style: .cancel) {
             _ in
             alertPopup.dismiss(animated: true, completion: nil)
         })
@@ -89,12 +100,6 @@ extension NewTopicViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         countCharacterLabel.isHidden = false
         isContentChanged = true
-        if textView.text.contains(placeHolder) {
-            textView.text = textView.text.components(separatedBy: placeHolder)[0]
-            contentTextView.textColor = UIColor.black
-        } else if textView.text.isEmpty {
-            setPlaceHolder()
-        }
         
         countCharacter = limitCharacter - textView.text.characters.count
         if countCharacter < 0 {
@@ -103,6 +108,13 @@ extension NewTopicViewController: UITextViewDelegate {
         } else {
             countCharacterLabel.textColor = Colors.grayCountLabel
             postButton.isEnabled = true
+        }
+        
+        if textView.text.contains(placeHolder) {
+            textView.text = textView.text.components(separatedBy: placeHolder)[0]
+            contentTextView.textColor = UIColor.black
+        } else if textView.text.isEmpty {
+            setPlaceHolder()
         }
     }
     
