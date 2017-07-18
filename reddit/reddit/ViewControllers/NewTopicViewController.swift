@@ -40,7 +40,7 @@ class NewTopicViewController: UIViewController {
     
     @IBAction func postAction(_ sender: Any) {
         print(User.currentUser)
-        let topic = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: contentTextView.text, upVote: 0, downVote: 0)
+        let topic = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: contentTextView.text, upVote: 0, downVote: 0, voteState: .none)
         delegate?.newPost(topic: topic)
         _ = navigationController?.popViewController(animated: true)
     }

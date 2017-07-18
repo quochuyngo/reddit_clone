@@ -7,6 +7,11 @@
 //
 import UIKit
 
+enum VoteState: String {
+    case upvote
+    case downvote
+    case none
+}
 struct Topic {
     let id: String
     let user: User
@@ -14,6 +19,7 @@ struct Topic {
     var content: String
     var upVote: Int
     var downVote: Int
+    var voteState: VoteState
     
     static func fakeTopics() -> [Topic] {
         var topics = [Topic]()
@@ -25,7 +31,7 @@ struct Topic {
         
         for _ in 0..<4 {
             for content in contents {
-                let topic = Topic(id: Utils.getUUID(), user: User(userId: Utils.getUUID(), userName: "huy_ngo", profilePicture: "reddit_logo"), createdDate: Date(), content: content, upVote: 0, downVote: 0)
+                let topic = Topic(id: Utils.getUUID(), user: User(userId: Utils.getUUID(), userName: "huy_ngo", profilePicture: "reddit_logo"), createdDate: Date(), content: content, upVote: 0, downVote: 0, voteState: .none)
                 topics.append(topic)
             }
         }

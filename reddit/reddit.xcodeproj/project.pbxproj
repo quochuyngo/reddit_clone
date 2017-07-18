@@ -15,11 +15,11 @@
 		5AE1F0041F1B2DB5004D35D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0031F1B2DB5004D35D3 /* AppDelegate.swift */; };
 		5AE1F0061F1B2DB5004D35D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0051F1B2DB5004D35D3 /* HomeViewController.swift */; };
 		5AE1F0091F1B2DB5004D35D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F0071F1B2DB5004D35D3 /* Main.storyboard */; };
-		5AE1F00B1F1B2DB5004D35D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F00A1F1B2DB5004D35D3 /* Assets.xcassets */; };
 		5AE1F00E1F1B2DB5004D35D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F00C1F1B2DB5004D35D3 /* LaunchScreen.storyboard */; };
 		5AE1F0191F1B2DB5004D35D3 /* redditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0181F1B2DB5004D35D3 /* redditTests.swift */; };
 		5AE1F0281F1B3314004D35D3 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0261F1B3314004D35D3 /* TopicCell.swift */; };
 		5AE1F0291F1B3314004D35D3 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F0271F1B3314004D35D3 /* TopicCell.xib */; };
+		5AF554331F1D121C00B8B6E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF554321F1D121C00B8B6E7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		5AE1F0031F1B2DB5004D35D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE1F0051F1B2DB5004D35D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5AE1F0081F1B2DB5004D35D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5AE1F00A1F1B2DB5004D35D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AE1F00D1F1B2DB5004D35D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AE1F00F1F1B2DB5004D35D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE1F0141F1B2DB5004D35D3 /* redditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = redditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +49,7 @@
 		5AE1F01A1F1B2DB5004D35D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE1F0261F1B3314004D35D3 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		5AE1F0271F1B3314004D35D3 /* TopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
+		5AF554321F1D121C00B8B6E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +105,10 @@
 				5AE1F0241F1B3298004D35D3 /* ViewControllers */,
 				5AE1F0231F1B328F004D35D3 /* Views */,
 				5AE1F0031F1B2DB5004D35D3 /* AppDelegate.swift */,
-				5AE1F00A1F1B2DB5004D35D3 /* Assets.xcassets */,
 				5AE1F00F1F1B2DB5004D35D3 /* Info.plist */,
 				5AE1F00C1F1B2DB5004D35D3 /* LaunchScreen.storyboard */,
 				5AE1F0071F1B2DB5004D35D3 /* Main.storyboard */,
+				5AF554321F1D121C00B8B6E7 /* Assets.xcassets */,
 			);
 			path = reddit;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			files = (
 				5AE1F00E1F1B2DB5004D35D3 /* LaunchScreen.storyboard in Resources */,
 				5AE1F0291F1B3314004D35D3 /* TopicCell.xib in Resources */,
-				5AE1F00B1F1B2DB5004D35D3 /* Assets.xcassets in Resources */,
+				5AF554331F1D121C00B8B6E7 /* Assets.xcassets in Resources */,
 				5AE1F0091F1B2DB5004D35D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

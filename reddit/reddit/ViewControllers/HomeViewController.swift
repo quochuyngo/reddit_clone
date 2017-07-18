@@ -53,6 +53,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as! TopicCell
         cell.topic = topics[indexPath.section]
+        cell.delegate = self
         return cell
     }
     
@@ -77,3 +78,11 @@ extension HomeViewController: NewTopicViewControllerDelegate {
     }
 }
 
+extension HomeViewController: TopicCellDelegate {
+    func topicDidChanged(topic: Topic) {
+        if let index = topics.index(where: { $0.id == topic.id }) {
+            topics[index] = topic
+            tableView.reloadData()
+        }
+    }
+}
