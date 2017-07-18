@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var topics: [Topic] =  Topic.fakeTopics()
     override func viewDidLoad() {
         super.viewDidLoad()
         initCells()
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
         if segue.identifier == "NewTopicVCSegue" {
             let vc = segue.destination as! NewTopicViewController
             vc.hidesBottomBarWhenPushed = true
+            vc.delegate  = self
         }
     }
 }
@@ -45,16 +47,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 8
+        return topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as! TopicCell
-        if indexPath.section == 2 {
-            cell.contentLabel.text = "Here you are. We should go there tonight!"
-        } else if indexPath.section == 3 {
-            cell.contentLabel.text = "Here you are. We should go there tonight! Here you are. We should go there tonight!"
-        }
+        cell.topic = topics[indexPath.section]
+        cell.delegate = self
         return cell
     }
     
@@ -64,7 +63,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
-        case 7:
+        case topics.count - 1:
             return 0
         default:
             return 8
@@ -72,4 +71,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension HomeViewController: NewTopicViewControllerDelegate {
+    func newPost(topic: Topic) {
+        topics.insert(topic, at: 0)
+        tableView.reloadData()
+    }
+}
 
+extension HomeViewController: TopicCellDelegate {
+    func topicDidChanged(topic: Topic) {
+        if let index = topics.index(where: { $0.id == topic.id }) {
+            topics[index] = topic
+            tableView.reloadData()
+        }
+    }
+}
