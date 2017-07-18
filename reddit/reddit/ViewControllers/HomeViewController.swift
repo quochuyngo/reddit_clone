@@ -8,10 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
+    var popularTopics:[Topic] = []
     @IBOutlet weak var tableView: UITableView!
-    var topics: [Topic] =  Topic.fakeTopics()
+    let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initCells()
@@ -19,8 +21,15 @@ class HomeViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
+        refreshControl.addTarget(self, action: #selector(HomeViewController.refreshData(refreshControl:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        topics = (tabBarController as! CustomTabBarController).topics
+        popularTopics = getPopularTopics()
+    }
+    
     func initCells() {
         tableView.register(UINib(nibName: String(describing: TopicCell.self), bundle: nil), forCellReuseIdentifier: "topicCell")
     }
@@ -30,6 +39,13 @@ class HomeViewController: UIViewController {
         view.backgroundColor = Colors.gray
         return view
     }
+    
+    func refreshData(refreshControl: UIRefreshControl) {
+        popularTopics = getPopularTopics()
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewTopicVCSegue" {
@@ -47,12 +63,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return topics.count
+        return popularTopics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") as! TopicCell
-        cell.topic = topics[indexPath.section]
+        cell.topic = popularTopics[indexPath.section]
         cell.delegate = self
         return cell
     }
@@ -63,7 +79,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
-        case topics.count - 1:
+        case popularTopics.count - 1:
             return 0
         default:
             return 8
@@ -73,7 +89,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeViewController: NewTopicViewControllerDelegate {
     func newPost(topic: Topic) {
-        topics.insert(topic, at: 0)
+        topics.append(topic)
+         (tabBarController as! CustomTabBarController).topics = topics
+        popularTopics = getPopularTopics()
         tableView.reloadData()
     }
 }
@@ -82,7 +100,9 @@ extension HomeViewController: TopicCellDelegate {
     func topicDidChanged(topic: Topic) {
         if let index = topics.index(where: { $0.id == topic.id }) {
             topics[index] = topic
-            tableView.reloadData()
+             (tabBarController as! CustomTabBarController).topics = topics
+            popularTopics = getPopularTopics()
+            //tableView.reloadData()
         }
     }
 }

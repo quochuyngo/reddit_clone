@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TopicCellDelegate {
-    func topicDidChanged(topic: Topic)
+   func topicDidChanged(topic: Topic)
 }
 
 class TopicCell: UITableViewCell {
@@ -46,14 +46,17 @@ class TopicCell: UITableViewCell {
         case .none:
             upvoteButton.isSelected = false
             downvoteButton.isSelected = false
+            numberVotesLabel.textColor = Colors.grayCountLabel
             break
         case .upvote:
             downvoteButton.isSelected = false
             upvoteButton.isSelected = true
+            numberVotesLabel.textColor = Colors.orangeUpvoted
             break
         case .downvote:
             upvoteButton.isSelected = false
             downvoteButton.isSelected = true
+            numberVotesLabel.textColor = Colors.purpleDownvoted
         }
     }
     
@@ -76,8 +79,8 @@ class TopicCell: UITableViewCell {
         if sender.isSelected {
             topic?.voteState = .none
         } else {
-            topic?.voteState = .downvote
             topic?.downVote += 1
+            topic?.voteState = .downvote
         }
         delegate?.topicDidChanged(topic: self.topic!)
     }
@@ -86,8 +89,8 @@ class TopicCell: UITableViewCell {
         if sender.isSelected {
             topic?.voteState = .none
         } else {
-            topic?.voteState = .upvote
             topic?.upVote += 1
+            topic?.voteState = .upvote
         }
         delegate?.topicDidChanged(topic: self.topic!)
     }

@@ -12,6 +12,8 @@
 		5AD5DC481F1C6109003A4AD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5DC471F1C6109003A4AD5 /* User.swift */; };
 		5AD5DC4A1F1C6254003A4AD5 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5DC491F1C6254003A4AD5 /* Topic.swift */; };
 		5AD5DC4C1F1C6F47003A4AD5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5DC4B1F1C6F47003A4AD5 /* Utils.swift */; };
+		5ADE28EC1F1E315000944477 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE28EB1F1E315000944477 /* BaseViewController.swift */; };
+		5ADE28EE1F1E319C00944477 /* MyTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE28ED1F1E319C00944477 /* MyTopicViewController.swift */; };
 		5AE1F0041F1B2DB5004D35D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0031F1B2DB5004D35D3 /* AppDelegate.swift */; };
 		5AE1F0061F1B2DB5004D35D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0051F1B2DB5004D35D3 /* HomeViewController.swift */; };
 		5AE1F0091F1B2DB5004D35D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F0071F1B2DB5004D35D3 /* Main.storyboard */; };
@@ -19,6 +21,7 @@
 		5AE1F0191F1B2DB5004D35D3 /* redditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0181F1B2DB5004D35D3 /* redditTests.swift */; };
 		5AE1F0281F1B3314004D35D3 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1F0261F1B3314004D35D3 /* TopicCell.swift */; };
 		5AE1F0291F1B3314004D35D3 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1F0271F1B3314004D35D3 /* TopicCell.xib */; };
+		5AEAB6131F1E6621007ACDCB /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEAB6121F1E6621007ACDCB /* CustomTabBarController.swift */; };
 		5AF554331F1D121C00B8B6E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF554321F1D121C00B8B6E7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +38,11 @@
 /* Begin PBXFileReference section */
 		5A7FDDD71F1B6F410021EB4C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5A7FDDD91F1B8B100021EB4C /* NewTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
-		5AD5DC471F1C6109003A4AD5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = User.swift; sourceTree = "<group>"; };
-		5AD5DC491F1C6254003A4AD5 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = Topic.swift; sourceTree = "<group>"; };
+		5AD5DC471F1C6109003A4AD5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5AD5DC491F1C6254003A4AD5 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		5AD5DC4B1F1C6F47003A4AD5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5ADE28EB1F1E315000944477 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5ADE28ED1F1E319C00944477 /* MyTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTopicViewController.swift; sourceTree = "<group>"; };
 		5AE1F0001F1B2DB5004D35D3 /* reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE1F0031F1B2DB5004D35D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE1F0051F1B2DB5004D35D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		5AE1F01A1F1B2DB5004D35D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE1F0261F1B3314004D35D3 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		5AE1F0271F1B3314004D35D3 /* TopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
+		5AEAB6121F1E6621007ACDCB /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		5AF554321F1D121C00B8B6E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +140,10 @@
 		5AE1F0241F1B3298004D35D3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5ADE28EB1F1E315000944477 /* BaseViewController.swift */,
+				5AEAB6121F1E6621007ACDCB /* CustomTabBarController.swift */,
 				5AE1F0051F1B2DB5004D35D3 /* HomeViewController.swift */,
+				5ADE28ED1F1E319C00944477 /* MyTopicViewController.swift */,
 				5A7FDDD91F1B8B100021EB4C /* NewTopicViewController.swift */,
 			);
 			path = ViewControllers;
@@ -257,9 +266,12 @@
 			files = (
 				5AE1F0061F1B2DB5004D35D3 /* HomeViewController.swift in Sources */,
 				5A7FDDD81F1B6F410021EB4C /* Colors.swift in Sources */,
+				5AEAB6131F1E6621007ACDCB /* CustomTabBarController.swift in Sources */,
 				5AD5DC481F1C6109003A4AD5 /* User.swift in Sources */,
 				5AE1F0281F1B3314004D35D3 /* TopicCell.swift in Sources */,
+				5ADE28EE1F1E319C00944477 /* MyTopicViewController.swift in Sources */,
 				5A7FDDDA1F1B8B100021EB4C /* NewTopicViewController.swift in Sources */,
+				5ADE28EC1F1E315000944477 /* BaseViewController.swift in Sources */,
 				5AE1F0041F1B2DB5004D35D3 /* AppDelegate.swift in Sources */,
 				5AD5DC4A1F1C6254003A4AD5 /* Topic.swift in Sources */,
 				5AD5DC4C1F1C6F47003A4AD5 /* Utils.swift in Sources */,

@@ -22,20 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="344" height="191.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reddit_logo" translatesAutoresizingMaskIntoConstraints="NO" id="lT0-ui-HbK">
-                                <rect key="frame" x="14" y="10" width="38" height="38"/>
+                                <rect key="frame" x="14" y="10" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="CzQ-Cd-vxg"/>
-                                    <constraint firstAttribute="width" constant="38" id="z6z-mr-FX0"/>
+                                    <constraint firstAttribute="height" constant="32" id="CzQ-Cd-vxg"/>
+                                    <constraint firstAttribute="width" constant="32" id="z6z-mr-FX0"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="huy_ngo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-uS-usT">
-                                <rect key="frame" x="60" y="13" width="56" height="17"/>
+                                <rect key="frame" x="54" y="10" width="56" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXd-qd-D1d">
-                                <rect key="frame" x="60" y="32" width="13" height="13.5"/>
+                                <rect key="frame" x="54" y="29" width="13" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                 <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,20 +45,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-Xl-pNu">
-                                <rect key="frame" x="14" y="56" width="322" height="1"/>
+                                <rect key="frame" x="14" y="50" width="322" height="1"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.59999999999999998" id="Dtc-ID-UC7"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-dH-0qX">
-                                <rect key="frame" x="14" y="163.5" width="84" height="20"/>
+                                <rect key="frame" x="14" y="159.5" width="128" height="24"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH3-T2-zdB">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="O1s-4R-JKj"/>
-                                            <constraint firstAttribute="height" constant="20" id="e86-na-MAK"/>
+                                            <constraint firstAttribute="width" constant="24" id="O1s-4R-JKj"/>
+                                            <constraint firstAttribute="height" constant="24" id="e86-na-MAK"/>
                                         </constraints>
                                         <state key="normal" image="ic_upvote"/>
                                         <state key="selected" image="ic_upvoted"/>
@@ -67,19 +67,25 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIZ-XQ-jsj">
-                                        <rect key="frame" x="28" y="0.0" width="28" height="20"/>
+                                        <rect key="frame" x="32" y="0.0" width="28" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-ef-tcb">
-                                        <rect key="frame" x="64" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="68" y="0.0" width="24" height="24"/>
                                         <state key="normal" image="ic_downvote"/>
                                         <state key="selected" image="ic_downvoted"/>
                                         <connections>
                                             <action selector="downvoteAction:" destination="KGk-i7-Jjw" eventType="touchDown" id="o35-Cc-If3"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqB-Xc-Em3">
+                                        <rect key="frame" x="100" y="0.0" width="28" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bD4-ef-tcb" firstAttribute="height" secondItem="PH3-T2-zdB" secondAttribute="height" id="Ku5-Aa-kR4"/>
@@ -87,7 +93,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-tk-SiC">
-                                <rect key="frame" x="14" y="63" width="322" height="92.5"/>
+                                <rect key="frame" x="14" y="57" width="322" height="94.5"/>
                                 <string key="text">Hackers target Irish energy networks amid fears of further cyber attacks on UK's crucial infrastructure. Hackers target Irish energy networks amid fears of further cyber attacks on UK's crucial infrastructure. They are so dangerous.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>

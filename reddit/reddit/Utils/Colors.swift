@@ -14,4 +14,5 @@ struct Colors {
     static let grayCountLabel = UIColor(colorLiteralRed: 163/255, green: 163/255, blue: 163/255, alpha: 1)
     static let purpleDownvoted = UIColor(colorLiteralRed: 163/255, green: 165/255, blue: 207/255, alpha: 1)
         static let orangeUpvoted = UIColor(colorLiteralRed: 255/255, green: 68/255, blue: 0/255, alpha: 1)
+    static let green = UIColor(colorLiteralRed: 15/255, green: 209/255, blue: 183/255, alpha: 1)
 }
