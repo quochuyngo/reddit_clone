@@ -9,12 +9,13 @@
 import UIKit
 
 protocol TopicCellDelegate {
-    func topicDidChanged(topic: Topic)
+   func topicDidChanged(topic: Topic)
 }
 
 class TopicCell: UITableViewCell {
     
-    @IBOutlet weak var numberVotesLabel: UILabel!
+    @IBOutlet weak var numberUpVotesLabel: UILabel!
+    @IBOutlet weak var numberDownVotesLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var createdTime: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -31,12 +32,9 @@ class TopicCell: UITableViewCell {
             contentLabel.text = topic.content
             nameLabel.text = topic.user.userName
             profileImage.image = UIImage(named: topic.user.profilePicture)
-            
-            if topic.upVote == 0 && topic.downVote == 0 {
-                numberVotesLabel.text = "Vote"
-            } else {
-                numberVotesLabel.text = "\(topic.upVote - topic.downVote)"
-            }
+            createdTime.text = Utils.format(date: topic.createdDate)
+            numberDownVotesLabel.text = Utils.display(votes: topic.downVote)
+            numberUpVotesLabel.text = Utils.display(votes: topic.upVote)
             setVote(state: topic.voteState)
         }
     }
@@ -46,14 +44,21 @@ class TopicCell: UITableViewCell {
         case .none:
             upvoteButton.isSelected = false
             downvoteButton.isSelected = false
+            numberUpVotesLabel.textColor = Colors.grayCountLabel
+            numberDownVotesLabel.textColor =  Colors.grayCountLabel
+
             break
         case .upvote:
             downvoteButton.isSelected = false
             upvoteButton.isSelected = true
+            numberUpVotesLabel.textColor = Colors.orangeUpvoted
+            numberDownVotesLabel.textColor =  Colors.grayCountLabel
             break
         case .downvote:
             upvoteButton.isSelected = false
             downvoteButton.isSelected = true
+            numberDownVotesLabel.textColor = Colors.purpleDownvoted
+            numberUpVotesLabel.textColor =  Colors.grayCountLabel
         }
     }
     
@@ -76,8 +81,8 @@ class TopicCell: UITableViewCell {
         if sender.isSelected {
             topic?.voteState = .none
         } else {
-            topic?.voteState = .downvote
             topic?.downVote += 1
+            topic?.voteState = .downvote
         }
         delegate?.topicDidChanged(topic: self.topic!)
     }
@@ -86,8 +91,8 @@ class TopicCell: UITableViewCell {
         if sender.isSelected {
             topic?.voteState = .none
         } else {
-            topic?.voteState = .upvote
             topic?.upVote += 1
+            topic?.voteState = .upvote
         }
         delegate?.topicDidChanged(topic: self.topic!)
     }
