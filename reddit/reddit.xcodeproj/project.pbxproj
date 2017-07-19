@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A776D9E1F1F65D9005E37FD /* BaseViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A776D9D1F1F65D9005E37FD /* BaseViewControllerTest.swift */; };
+		5A776DA21F1F723C005E37FD /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A776DA11F1F723C005E37FD /* UtilsTest.swift */; };
 		5A7FDDD81F1B6F410021EB4C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FDDD71F1B6F410021EB4C /* Colors.swift */; };
 		5A7FDDDA1F1B8B100021EB4C /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FDDD91F1B8B100021EB4C /* NewTopicViewController.swift */; };
 		5AD5DC481F1C6109003A4AD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5DC471F1C6109003A4AD5 /* User.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A776D9D1F1F65D9005E37FD /* BaseViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTest.swift; sourceTree = "<group>"; };
+		5A776DA11F1F723C005E37FD /* UtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
 		5A7FDDD71F1B6F410021EB4C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5A7FDDD91F1B8B100021EB4C /* NewTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		5AD5DC471F1C6109003A4AD5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -122,7 +126,9 @@
 		5AE1F0171F1B2DB5004D35D3 /* redditTests */ = {
 			isa = PBXGroup;
 			children = (
+				5A776D9D1F1F65D9005E37FD /* BaseViewControllerTest.swift */,
 				5AE1F01A1F1B2DB5004D35D3 /* Info.plist */,
+				5A776DA11F1F723C005E37FD /* UtilsTest.swift */,
 				5AE1F0181F1B2DB5004D35D3 /* redditTests.swift */,
 			);
 			path = redditTests;
@@ -283,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE1F0191F1B2DB5004D35D3 /* redditTests.swift in Sources */,
+				5A776DA21F1F723C005E37FD /* UtilsTest.swift in Sources */,
+				5A776D9E1F1F65D9005E37FD /* BaseViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

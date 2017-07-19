@@ -9,6 +9,8 @@
 import UIKit
 
 class MyTopicViewController: HomeViewController {
+
+    @IBOutlet weak var infoLabel: UILabel!
     var myTopics: [Topic] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,18 @@ class MyTopicViewController: HomeViewController {
     override func viewWillAppear(_ animated: Bool) {
         topics = (tabBarController as! CustomTabBarController).topics
         myTopics = getMyTopics()
+        if myTopics.count == 0 {
+            infoLabel.isHidden = false
+        } else {
+            infoLabel.isHidden = true
+        }
         tableView.reloadData()
+    }
+    
+    override func refreshData(refreshControl: UIRefreshControl) {
+        myTopics = getMyTopics()
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
@@ -32,5 +45,14 @@ extension MyTopicViewController {
         cell.topic = myTopics[indexPath.section]
         cell.delegate = self
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case myTopics.count - 1:
+            return 0
+        default:
+            return 8
+        }
     }
 }

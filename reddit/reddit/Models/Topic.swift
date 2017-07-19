@@ -32,8 +32,8 @@ struct Topic {
         let names = ["alan", "joe_parker", "catlin"]
         for _ in 0..<4 {
             for content in contents {
-                let upvotes =  Int(arc4random_uniform(15))
-                let downvotes = 0//Int(arc4random_uniform(5))
+                let upvotes =  Int(arc4random_uniform(16))
+                let downvotes = Int(arc4random_uniform(10))
                 let index = Int(arc4random_uniform(3))
                 let profilePicture = pictures[index]
                 let name = names[index]

@@ -1,15 +1,15 @@
 //
-//  redditTests.swift
-//  redditTests
+//  UtilsTest.swift
+//  reddit
 //
-//  Created by Quoc Huy Ngo on 7/16/17.
+//  Created by Quoc Huy Ngo on 7/19/17.
 //  Copyright © 2017 Quoc Huy Ngo. All rights reserved.
 //
 
 import XCTest
 @testable import reddit
 
-class redditTests: XCTestCase {
+class UtilsTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,13 +21,22 @@ class redditTests: XCTestCase {
         super.tearDown()
     }
     
+    func testDisplayVotes() {
+        XCTAssertEqual(Utils.display(votes: 100), "100")
+        XCTAssertEqual(Utils.display(votes: 2000), "2k")
+        XCTAssertEqual(Utils.display(votes: 2200), "2.2k")
+        XCTAssertEqual(Utils.display(votes: 2020), "2.0k")
+        XCTAssertEqual(Utils.display(votes: 2345), "2.3k")
+    }
+    
+//    func testFormatDate() {
+//        let date = Date()
+//        XCTAssertEqual(Utils.format(date: date), "4min")
+//    }
     func testExample() {
-        let topic = Topic(id: Utils.getUUID(), user: User(userId: Utils.getUUID(), userName: "testname", profilePicture: ""), createdDate: Date(), content: "test", upVote: 0, downVote: 0, voteState: .none)
-        let topic1 = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: "test", upVote: 0, downVote: 0, voteState: .none)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
