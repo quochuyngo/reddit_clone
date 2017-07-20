@@ -71,12 +71,7 @@ class TopicCell: UITableViewCell {
         profileImage.makeRounded(radius: radius)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    //update number of downvotes and set state
     @IBAction func downvoteAction(_ sender: UIButton) {
         if sender.isSelected {
             topic?.voteState = .none
@@ -87,6 +82,7 @@ class TopicCell: UITableViewCell {
         delegate?.topicDidChanged(topic: self.topic!)
     }
     
+    //update number of upvotes and set state
     @IBAction func upvoteAction(_ sender: UIButton) {
         if sender.isSelected {
             topic?.voteState = .none

@@ -39,8 +39,14 @@ class NewTopicViewController: UIViewController {
     }
     
     @IBAction func postAction(_ sender: Any) {
-        print(User.currentUser)
-        let topic = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: contentTextView.text, upVote: 0, downVote: 0, voteState: .none)
+        let topic = Topic(id: Utils.getUUID()
+                        , user: User.currentUser
+                        , createdDate: Date()
+                        , content: contentTextView.text
+                        , upVote: 0
+                        , downVote: 0
+                        , voteState: .none)
+        
         delegate?.newPost(topic: topic)
         _ = navigationController?.popViewController(animated: true)
     }
@@ -101,6 +107,7 @@ extension NewTopicViewController: UITextViewDelegate {
         countCharacterLabel.isHidden = false
         isContentChanged = true
         
+        //limit 255 characters in topic
         countCharacter = limitCharacter - textView.text.characters.count
         if countCharacter < 0 {
             countCharacterLabel.textColor = UIColor.red

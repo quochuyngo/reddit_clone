@@ -40,8 +40,8 @@ class HomeViewController: BaseViewController {
         return view
     }
     
+    //update newest data from list topics while user had upvotes/downvotes
     func refreshData(refreshControl: UIRefreshControl) {
-        //update newest data from topic list while user had upvotes/downvotes
         popularTopics = getPopularTopics()
         tableView.reloadData()
         refreshControl.endRefreshing()
@@ -89,6 +89,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: NewTopicViewControllerDelegate {
+    //add new topic created by user to list topic
     func newPost(topic: Topic) {
         topics.append(topic)
          (tabBarController as! CustomTabBarController).topics = topics
@@ -98,6 +99,7 @@ extension HomeViewController: NewTopicViewControllerDelegate {
 }
 
 extension HomeViewController: TopicCellDelegate {
+    //update topic upvoted/downvoted to list topics
     func topicDidChanged(topic: Topic) {
         if let index = topics.index(where: { $0.id == topic.id }) {
             topics[index] = topic

@@ -21,7 +21,7 @@ struct Topic {
     var downVote: Int
     var voteState: VoteState
     
-    static func fakeTopics() -> [Topic] {
+    static func createFakeTopics() -> [Topic] {
         var topics = [Topic]()
         let contents = ["Snapchat now allows exact location sharing"
                         , "How can we stop algorithms telling lies? Algorithms can dictate whether you get a mortgage or how much you pay for insurance. But sometimes they’re wrong – and sometimes they are designed to deceive"
@@ -37,7 +37,13 @@ struct Topic {
                 let index = Int(arc4random_uniform(3))
                 let profilePicture = pictures[index]
                 let name = names[index]
-                let topic = Topic(id: Utils.getUUID(), user: User(userId: Utils.getUUID(), userName: name, profilePicture: profilePicture), createdDate: Date(), content: content, upVote: upvotes, downVote: downvotes, voteState: .none)
+                let topic = Topic(id: Utils.getUUID()
+                                    , user: User(userId: Utils.getUUID(), userName: name, profilePicture: profilePicture)
+                                    , createdDate: Date()
+                                    , content: content
+                                    , upVote: upvotes
+                                    , downVote: downvotes
+                                    , voteState: .none)
                 topics.append(topic)
             }
         }

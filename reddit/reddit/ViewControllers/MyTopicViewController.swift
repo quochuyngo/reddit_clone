@@ -18,7 +18,7 @@ class MyTopicViewController: HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         topics = (tabBarController as! CustomTabBarController).topics
-        myTopics = getMyTopics()
+        myTopics = getMyTopics().reversed()
         if myTopics.count == 0 {
             infoLabel.isHidden = false
         } else {
@@ -28,7 +28,7 @@ class MyTopicViewController: HomeViewController {
     }
     
     override func refreshData(refreshControl: UIRefreshControl) {
-        myTopics = getMyTopics()
+        myTopics = getMyTopics().reversed()
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
