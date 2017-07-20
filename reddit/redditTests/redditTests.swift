@@ -22,8 +22,6 @@ class redditTests: XCTestCase {
     }
     
     func testExample() {
-        let topic = Topic(id: Utils.getUUID(), user: User(userId: Utils.getUUID(), userName: "testname", profilePicture: ""), createdDate: Date(), content: "test", upVote: 0, downVote: 0, voteState: .none)
-        let topic1 = Topic(id: Utils.getUUID(), user: User.currentUser, createdDate: Date(), content: "test", upVote: 0, downVote: 0, voteState: .none)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

@@ -11,6 +11,6 @@ class CustomTabBarController: UITabBarController {
    
     var topics: [Topic] = []
     override func viewDidLoad() {
-        topics = Topic.fakeTopics()
+        topics = Topic.createFakeTopics()
     }
 }

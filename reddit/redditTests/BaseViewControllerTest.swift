@@ -42,7 +42,7 @@ class BaseViewControllerTest: XCTestCase {
     }
     
     func testGetPopularTopics() {
-        baseVC.topics += Topic.fakeTopics()
+        baseVC.topics += Topic.createFakeTopics()
         XCTAssertEqual(baseVC.getPopularTopics().count, 20)
         XCTAssertEqual(baseVC.sortByUpvotes().first?.user.userName, "second")
     }
