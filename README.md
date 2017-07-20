@@ -14,6 +14,9 @@ The following **required** functionality is completed:
 - [x] In-memory: Design an in-memory data structure (shared by the same process as your application) that will allow you to keep the topics in memory without using data persistence. It is okay for the topics to disappear after the application restarts.
 
 ## Walkthrough
+<img src='https://user-images.githubusercontent.com/10734967/28406523-1f6a99bc-6d5b-11e7-9b54-02dcfc5c1488.gif' title='Reddit walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Documentations
 Reddit app written in Swift 3.0
@@ -54,6 +57,7 @@ Reddit app written in Swift 3.0
     }
   ````
       Sort topics by upvotes
+  
   ````swift
     //BaseViewController.swift
     func sortByUpvotes() -> [Topic]{
@@ -89,8 +93,9 @@ Reddit app written in Swift 3.0
   ````
   
    - **Allow user Upvote/Downvote a topic**
-
+   
     Upvote/downvote will happen when user tap to UpvoteButton
+    
    ````swift
     //TopicCell.swift
     @IBAction func upvoteAction(_ sender: UIButton) {
@@ -107,3 +112,9 @@ Reddit app written in Swift 3.0
         delegate?.topicDidChanged(topic: self.topic!) 
     }
    ````
+## Copyright
+Assets in app from [FlatIcon](http://www.flaticon.com/) and [Icon8](https://icons8.com/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
