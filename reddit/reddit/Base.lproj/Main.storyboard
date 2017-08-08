@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jFH-VC-m0O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jFH-VC-m0O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -81,7 +81,7 @@
                         <barButtonItem key="rightBarButtonItem" image="ic_new_post" id="Hqg-3x-JxS">
                             <color key="tintColor" red="0.058823529411764705" green="0.81960784313725488" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="nAT-EJ-BqQ" kind="show" identifier="NewTopicVCSegue" id="f3i-Hh-ivM"/>
+                                <segue destination="LtW-6h-V1a" kind="presentation" identifier="NewTopicVCSegue" id="VXA-GU-Jn1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -106,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" text="An interesting title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Km-s53">
-                                <rect key="frame" x="10" y="68" width="355" height="519"/>
+                                <rect key="frame" x="10" y="64" width="355" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -134,9 +134,9 @@
                             <constraint firstItem="Mfj-Km-s53" firstAttribute="leading" secondItem="Vva-MY-BlE" secondAttribute="leading" constant="10" id="1bv-Gg-g0j"/>
                             <constraint firstItem="xJS-CY-szI" firstAttribute="top" secondItem="XON-yG-vxh" secondAttribute="bottom" id="Jvg-Oe-Kcb"/>
                             <constraint firstItem="XON-yG-vxh" firstAttribute="leading" secondItem="Vva-MY-BlE" secondAttribute="leading" id="P2l-CU-vv0"/>
+                            <constraint firstItem="Mfj-Km-s53" firstAttribute="top" secondItem="7fK-CS-dz3" secondAttribute="bottom" id="ZpR-ND-vnp"/>
                             <constraint firstAttribute="trailing" secondItem="Mfj-Km-s53" secondAttribute="trailing" constant="10" id="n35-mh-nF1"/>
                             <constraint firstAttribute="trailing" secondItem="XON-yG-vxh" secondAttribute="trailing" id="rNv-Wj-Evh"/>
-                            <constraint firstItem="Mfj-Km-s53" firstAttribute="top" secondItem="7fK-CS-dz3" secondAttribute="bottom" constant="4" id="uNH-VI-2hK"/>
                             <constraint firstItem="XON-yG-vxh" firstAttribute="top" secondItem="Mfj-Km-s53" secondAttribute="bottom" id="zTR-Vo-X9s"/>
                         </constraints>
                     </view>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkb-4z-faF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413.5999999999999" y="-548.27586206896558"/>
+            <point key="canvasLocation" x="2296.8000000000002" y="-532.98350824587715"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="7Rh-5t-1mB">
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="-1423" y="-220"/>
         </scene>
-        <!--Home View Controller-->
+        <!--New Topic View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewTopicViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -199,12 +199,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-lg-4QN">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Text Post" id="c1b-rs-VAX"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591.2" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1358" y="278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wpA-Zk-SAQ">
@@ -247,6 +256,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cl8-hd-9fR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-471.19999999999999" y="106.59670164917542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uxf-S2-Axg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LtW-6h-V1a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JNg-U7-3x1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nAT-EJ-BqQ" kind="relationship" relationship="rootViewController" id="wHJ-YH-qcl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mR-O0-Wvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.5999999999999" y="-533.88305847076469"/>
         </scene>
     </scenes>
     <resources>

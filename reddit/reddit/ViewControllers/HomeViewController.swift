@@ -50,7 +50,8 @@ class HomeViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewTopicVCSegue" {
-            let vc = segue.destination as! NewTopicViewController
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as!  NewTopicViewController
             vc.hidesBottomBarWhenPushed = true
             vc.delegate  = self
         }

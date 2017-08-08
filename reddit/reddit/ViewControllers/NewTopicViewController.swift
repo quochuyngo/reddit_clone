@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NewTopicViewControllerDelegate {
+protocol NewTopicViewControllerDelegate: class {
     func newPost(topic: Topic)
 }
 
@@ -18,7 +18,7 @@ class NewTopicViewController: UIViewController {
     @IBOutlet weak var countCharacterLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    var delegate: NewTopicViewControllerDelegate?
+    weak var delegate: NewTopicViewControllerDelegate?
     
     let placeHolder = "An interesting title"
     let limitCharacter: Int = 255
@@ -48,14 +48,14 @@ class NewTopicViewController: UIViewController {
                         , voteState: .none)
         
         delegate?.newPost(topic: topic)
-        _ = navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
         if isContentChanged {
             showWarningPopup()
         } else {
-             _ = navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
